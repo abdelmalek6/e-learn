@@ -8,8 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "Backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "E-Learn/$1"
     }
   ]
 }
