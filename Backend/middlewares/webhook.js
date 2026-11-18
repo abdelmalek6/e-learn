@@ -1,9 +1,9 @@
-import User from "../models/User";
+import User from "../models/User.js";
 import { Webhook } from "svix";
 
 export const webhook = async (req, res) => {
   try {
-    const whook = new webhook(process.env.SVIX_SECRET);
+    const whook = new Webhook(process.env.SVIX_SECRET);
 
     await whook.verify(JSON.stringify(req.body), {
       "svix-id": req.headers["svix-id"],

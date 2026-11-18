@@ -11,7 +11,7 @@ dotenv.config();
 
 
 
-app.post("/webhook",webhook)
+app.post("/clerk",webhook)
 app.get("/",(req,res)=>{
     res.send("Server is running")
 })
