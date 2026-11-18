@@ -4,14 +4,14 @@ import cors from "cors";
 import ConnectDb from "./configs/connectdb.js";
 import { webhook } from "./middlewares/webhook.js";
 const app=express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 dotenv.config();
 
 
 
 
-app.post("/clerk",webhook)
+app.post("/clerk",express.json(),webhook)
 app.get("/",(req,res)=>{
     res.send("Server is running")
 })
